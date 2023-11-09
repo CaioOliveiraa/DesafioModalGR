@@ -38,54 +38,44 @@ function calculateNotes(amount, withdrawalMethod) {
     };
 
 
-    
-    if (withdrawalMethod === "greater") {
-        const availableNotes = [100, 50, 20, 10, 5, 2];
-        for (const note of availableNotes) {
-            while (amount >= note) {
-                notes[note]++;
-                amount -= note;
-                if(amount == 6 || amount == 8){
-                    console.log("foi")
-                    while(amount >= 2){
-                        notes[2]++;
-                        amount -= 2;
-                    }
-                }
-            }
+    if ((amount === 6 || amount === 8) && withdrawalMethod !== "half") {
+        while (amount >= 2) {
+            notes[2]++;
+            amount -= 2;
         }
-    } else if (withdrawalMethod === "lesser") {
-        const availableNotes = [20, 10, 5, 2];
-        for (const note of availableNotes) {
-            while (amount >= note) {
-                notes[note]++;
-                amount -= note;
+    } else {
+        if (withdrawalMethod === "greater") {
+            const availableNotes = [100, 50, 20, 10, 5, 2];
+
+            for (const note of availableNotes) {
                 while (amount >= note) {
                     notes[note]++;
                     amount -= note;
-                    if(amount || 6 && amount == 8){
-                        while(amount >= 2){
-                            notes[2]++;
-                            amount -= 2;
-                        }
-                    }
                 }
             }
-        } 
-    } else if (withdrawalMethod === "half") {
-        const halfAmount = amount / 2;
-        const halfNotes1 = calculateNotes(halfAmount, "greater");
-        const halfNotes2 = calculateNotes(halfAmount, "lesser");
+        } else if (withdrawalMethod === "lesser") {
+            const availableNotes = [20, 10, 5, 2];
+            for (const note of availableNotes) {
+                while (amount >= note) {
+                    notes[note]++;
+                    amount -= note;
+                }
+            } 
+        } else if (withdrawalMethod === "half") {
+            const halfAmount = amount / 2;
+            const halfNotes1 = calculateNotes(halfAmount, "greater");
+            const halfNotes2 = calculateNotes(halfAmount, "lesser");
 
-        for (const note in halfNotes1) {
-            halfNotes1[note] += halfNotes2[note];
+            for (const note in halfNotes1) {
+                halfNotes1[note] += halfNotes2[note];
+            }
+            return halfNotes1;
         }
-        return halfNotes1;
     }
-
 
     return notes;
 }
+
 
 function displayLoanOptions(notes, withdrawalMethod) {
     const resultDiv = document.getElementById("result");
