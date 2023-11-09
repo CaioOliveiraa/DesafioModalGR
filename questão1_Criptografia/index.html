@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Senhas Criptografadas</h1>
+        <label for="password1">Senha 1:</label>
+        <input type="password" id="password1" placeholder="Digite a primeira senha">
+        <label for="password2">Senha 2:</label>
+        <input type="password" id="password2" placeholder="Digite a segunda senha">
+        <label for="password3">Senha 3:</label>
+        <input type="password" id="password3" placeholder="Digite a terceira senha">
+        <button id="criptografarButton" onclick="encryptPasswords()">Criptografar Senhas</button>
+
+        <div class="resultContainer">
+            <h4 id="warning"></h4>
+            <label id="labelPassword1">Senha 1 Criptografada:</label>
+            <h4 id="encryptedPassword1"></h4>
+            <label id="labelPassword2">Senha 2 Criptografada:</label>
+            <h4 id="encryptedPassword2"></h4>
+            <label id="labelPassword3">Senha 3 Criptografada:</label>
+            <h4 id="encryptedPassword3"></h4>
+            <h4 id="alerta"></h4>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+
+
+</body>
+</html>
