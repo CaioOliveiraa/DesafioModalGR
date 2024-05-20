@@ -87,14 +87,19 @@ h1 {
 }
 
 .nomeColaborador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px 10px 5px;
+  width: 350px;
+  height:50px ;
+  max-width: 350px;
   margin-top: 80px;
   font-size: 30px;
   font-weight: bold;
-  padding: 10px;
   border-radius: 20px;
   background-color: #fff;
   color: #0e1643;
-  max-width: 350px;
   word-wrap: break-word;
 }
 

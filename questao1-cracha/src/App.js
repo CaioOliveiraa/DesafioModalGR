@@ -52,7 +52,7 @@ function App() {
       <div className='cracha'>
         <div className='suporte'></div>
         <img className='logoCracha' src='./assets/logo-azul-branco-modalgr.png' alt='Logo do Crachá'></img>
-        {resultado && <p className='nomeColaborador'>{resultado}</p>}
+        <p className='nomeColaborador'>{resultado}</p>
         <div className='footer'></div>
       </div>
     </div>

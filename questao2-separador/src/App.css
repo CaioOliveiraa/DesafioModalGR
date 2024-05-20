@@ -4,49 +4,70 @@
 }
 
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   height: 100vh;
   color: #fff;
+  background-color: black;
+  background-image: url('/public/assets/fundo.png');
+  background-size: cover;
 }
 
-header {
-  background-color: #0d1440;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ff8a00;
+img{
+  width: 300px;
 }
-
-header img {
-  width: 100px;
-  margin: 10px 0 10px 40px;
-}
-
-h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 
 .content div {
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 50px;
-}
-
-.string{
-  font-weight: bold;
-}
-.content h2 {
-  margin-bottom: 15px;
-  background-color: #ff8a00;
-  padding: 10px;
-  border-radius: 100px;
-}
-
-.content p {
   font-size: 20px;
-  color: #ff8a00;
+}
+
+.content div h2 {
+  margin: 20px;
+  font-size: 30px;
+}
+
+.content div input {
+  width: 350px;
+  height: 40px;
+  border-radius: 30px;
+  padding: 10px;
+  color: #f58220;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+.content div button {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #f58220;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.content div button:hover {
+  transform: scale(1.05)
+}
+
+.content div p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 350px;
+  min-height: 40px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #000000;
+  word-break: break-word;
+  max-width: 350px;
 }
